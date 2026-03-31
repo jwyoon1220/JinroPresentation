@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 시대, 개발자의 언어로 대화하기 - 진로 발표</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --bg: #050505;
+            --card: #111111;
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --text: #ffffff;
+            --sub-text: #a0a0a0;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Pretendard', sans-serif;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* 슬라이드 애니메이션 */
+        .deck {
+            display: flex;
+            width: 900vw; /* 슬라이드 개수 */
+            height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 5%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* 배경 장식 */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 40vw; height: 40vw;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            filter: blur(100px);
+            opacity: 0.1;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .slide-content {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 60px;
+            border-radius: 30px;
+            width: 80%;
+            max-width: 1000px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        h1 { font-size: 4rem; color: var(--primary); margin: 0; }
+        h2 { font-size: 2.8rem; color: var(--primary); border-left: 8px solid var(--secondary); padding-left: 20px; margin-bottom: 30px; }
+        p { font-size: 1.6rem; line-height: 1.7; color: var(--text); word-break: keep-all; }
+        li { font-size: 1.4rem; margin-bottom: 20px; color: var(--sub-text); }
+        b { color: var(--text); border-bottom: 2px solid var(--secondary); }
+
+        .author-box { display: flex; align-items: center; gap: 30px; margin-top: 20px; }
+        .author-box div { text-align: left; }
+
+        .progress-bar {
+            position: fixed; bottom: 0; left: 0;
+            height: 5px; background: linear-gradient(to right, var(--primary), var(--secondary));
+            width: 0%; transition: width 0.3s;
+        }
+
+        /* 시현 버튼 디자인 */
+        .demo-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white; border: none; padding: 20px 40px;
+            font-size: 1.5rem; font-weight: bold; border-radius: 50px;
+            cursor: pointer; margin-top: 30px;
+            box-shadow: 0 0 20px rgba(0,242,255,0.4);
+        }
+    </style>
+</head>
+<body onclick="nextSlide()">
+
+    <div class="deck" id="deck">
+        <section>
+            <div class="slide-content">
+                <p style="margin-bottom:0;">진로 탐구 발표</p>
+                <h1>How to Talk to Robots</h1>
+                <p>AI 시대, 개발자라는 직업이 나아가야 할 방향</p>
+                <p style="font-size: 1.2rem; color: var(--sub-text);">발표자 : [본인이름]</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>Tabitha Goldstaub</h2>
+                <div class="author-box">
+                    <div>
+                        <p><b>타비사 골드스타우브</b>는 영국의 AI 전략가이자 기업가입니다.</p>
+                        <ul>
+                            <li>영국 정부 AI 위원회(AI Council) 의장 역임</li>
+                            <li>글로벌 AI 추천 플랫폼 CognitionX 공동 창업</li>
+                            <li>AI의 기술적 원리를 대중에게 알리는 교육 혁신가</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>핵심 지식: AI는 마법이 아니다</h2>
+                <p>이 책은 AI를 막연한 공포나 마법으로 보지 말라고 경고합니다.</p>
+                <ul>
+                    <li><b>데이터 편향:</b> AI가 학습하는 데이터의 한계를 이해하기</li>
+                    <li><b>알고리즘의 논리:</b> 기계가 판단하는 과정을 인간의 언어로 번역하기</li>
+                    <li><b>협업의 기술:</b> 도구로서의 AI를 제어하는 '대화법' 익히기</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>개발자: AI의 '명령어'를 설계하는 사람</h2>
+                <p>앞으로의 개발자는 단순히 코드를 치는 사람이 아닙니다.</p>
+                <ul>
+                    <li>AI에게 어떤 문제를 해결할지 <b>정밀하게 정의</b>하는 능력이 핵심입니다.</li>
+                    <li>사용자의 요구사항을 AI가 이해할 수 있는 <b>논리적 구조</b>로 변환해야 합니다.</li>
+                    <li>이것이 저자가 말하는 "로봇과 대화하는 법"의 실체입니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>기술적 책임감: 검증과 감시</h2>
+                <p>AI가 내놓은 결과물이 항상 정답은 아닙니다.</p>
+                <ul>
+                    <li><b>디버깅 능력:</b> AI가 만든 코드의 오류와 허점을 찾아내는 전문성</li>
+                    <li><b>윤리적 가이드:</b> 기술이 사회적 편견을 강화하지 않도록 제어하는 역할</li>
+                    <li>즉, 개발자는 AI의 <b>최종 승인권자</b>가 되어야 합니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>Software Implementation</h2>
+                <p>책의 내용을 바탕으로 구현해 본<br><b>논리 기반 프로그램</b>을 시현해 보겠습니다.</p>
+                <button class="demo-btn">프로그램 실행 (Alt+Tab 준비)</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>나의 생각: 개발자의 진정한 가치</h2>
+                <p>책을 읽으며 미래의 나에 대해 고민해 보았습니다.</p>
+                <ul>
+                    <li>AI가 코딩을 대신해주는 시대에 개발자의 가치는 어디에 있을까?</li>
+                    <li>결국 <b>'인간 중심의 사고'</b>와 <b>'논리적 비판력'</b>에 답이 있었습니다.</li>
+                    <li>단순 기술자가 아닌, 기술을 조율하는 <b>오케스트라 지휘자</b> 같은 개발자가 되고 싶습니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-content">
+                <h2>마치며</h2>
+                <p>"AI와 대화하는 법은 결국, 인간의 생각을 얼마나 논리적으로 정리하느냐의 문제였다."</p>
+                <p style="margin-top: 50px; font-size: 2rem; color: var(--primary);">감사합니다.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="progress-bar" id="progress"></div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 8;
+        const deck = document.getElementById('deck');
+        const progress = document.getElementById('progress');
+
+        function updateSlide() {
+            deck.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            progress.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // 키보드 지원
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // 우클릭은 이전 슬라이드
+        window.oncontextmenu = function (e) {
+            e.preventDefault();
+            prevSlide();
+        }
+    </script>
+</body>
+</html>
